@@ -1,7 +1,5 @@
-
 import psycopg2
 from main import read_file
-
 
 
 conn = psycopg2.connect(user="sports_user", database="sports_stats")
