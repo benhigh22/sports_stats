@@ -10,7 +10,7 @@ def read_file():
 
 
 def add_new_player():
-    new_player = input("Enter new player name in format MMitchell for Malcolm Mitchell: ")
+    new_player = input("To add that player to the database, enter the new player name in format MMitchell for Malcolm Mitchell: ")
     new_receptions = input("Enter how many receptions the player had in the 2015 season: ")
     new_rec_yards = input("Enter how many receiving yards the player had in the 2015 season: ")
     new_tds = input("Enter how many touchdowns the player had in the 2015 season: ")
@@ -18,9 +18,10 @@ def add_new_player():
     try:
         cur.execute("insert into player_stats values (%s, %s, %s, %s, %s);", (new_player, new_receptions, new_rec_yards, new_tds, new_position))
         conn.commit()
+        print("Awesome, " + new_player + " was added to the database!")
     except psycopg2.DataError:
         return "Sorry that's not valid player information."
-    
+
 print("You can search for receiving stats about any players from the 2015 UGA Bulldogs. \n")
 print("Categories you can search by are player name, receptions, receiving yards, touchdowns, or position.")
 
