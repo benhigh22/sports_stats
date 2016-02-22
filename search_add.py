@@ -8,7 +8,7 @@ print("Categories you can search by are player name, receptions, receiving yards
 
 
 while True:
-    search_or_add = input("Would you like to search the database or add new information to it? Enter either s or a. ")
+    search_or_add = input("\n" + "Would you like to search the database or add new information to it? Enter either s or a. ")
 
     if search_or_add == "s":
         search_direction = input("\n" + "To search by player name, enter 'pn'. Receptions, enter 'rec'. "
